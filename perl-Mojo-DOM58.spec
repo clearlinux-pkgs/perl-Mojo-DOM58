@@ -4,12 +4,14 @@
 #
 Name     : perl-Mojo-DOM58
 Version  : 2.000
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Mojo-DOM58-2.000.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Mojo-DOM58-2.000.tar.gz
 Summary  : 'Minimalistic HTML/XML DOM parser with CSS selectors'
 Group    : Development/Tools
 License  : Artistic-2.0
+Requires: perl-Mojo-DOM58-license = %{version}-%{release}
+Requires: perl-Mojo-DOM58-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -52,8 +54,26 @@ Requires: perl-Mojo-DOM58 = %{version}-%{release}
 dev components for the perl-Mojo-DOM58 package.
 
 
+%package license
+Summary: license components for the perl-Mojo-DOM58 package.
+Group: Default
+
+%description license
+license components for the perl-Mojo-DOM58 package.
+
+
+%package perl
+Summary: perl components for the perl-Mojo-DOM58 package.
+Group: Default
+Requires: perl-Mojo-DOM58 = %{version}-%{release}
+
+%description perl
+perl components for the perl-Mojo-DOM58 package.
+
+
 %prep
 %setup -q -n Mojo-DOM58-2.000
+cd %{_builddir}/Mojo-DOM58-2.000
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -77,6 +97,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Mojo-DOM58
+cp %{_builddir}/Mojo-DOM58-2.000/LICENSE %{buildroot}/usr/share/package-licenses/perl-Mojo-DOM58/3c84d6624185a8425697aa6be532533fba83d755
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -89,13 +111,20 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Mojo/DOM58.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Mojo/DOM58/Entities.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Mojo/DOM58/_CSS.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Mojo/DOM58/_Collection.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Mojo/DOM58/_HTML.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Mojo::DOM58.3
 /usr/share/man/man3/Mojo::DOM58::Entities.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Mojo-DOM58/3c84d6624185a8425697aa6be532533fba83d755
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Mojo/DOM58.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Mojo/DOM58/Entities.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Mojo/DOM58/_CSS.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Mojo/DOM58/_Collection.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Mojo/DOM58/_HTML.pm
