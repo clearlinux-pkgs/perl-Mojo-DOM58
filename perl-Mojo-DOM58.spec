@@ -4,7 +4,7 @@
 #
 Name     : perl-Mojo-DOM58
 Version  : 2.000
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Mojo-DOM58-2.000.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Mojo-DOM58-2.000.tar.gz
 Summary  : 'Minimalistic HTML/XML DOM parser with CSS selectors'
@@ -123,8 +123,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Mojo/DOM58.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Mojo/DOM58/Entities.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Mojo/DOM58/_CSS.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Mojo/DOM58/_Collection.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Mojo/DOM58/_HTML.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Mojo/DOM58.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Mojo/DOM58/Entities.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Mojo/DOM58/_CSS.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Mojo/DOM58/_Collection.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Mojo/DOM58/_HTML.pm
