@@ -123,8 +123,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/Mojo/DOM58.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Mojo/DOM58/Entities.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Mojo/DOM58/_CSS.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Mojo/DOM58/_Collection.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Mojo/DOM58/_HTML.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Mojo/DOM58.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Mojo/DOM58/Entities.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Mojo/DOM58/_CSS.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Mojo/DOM58/_Collection.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Mojo/DOM58/_HTML.pm
