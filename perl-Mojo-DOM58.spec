@@ -4,7 +4,7 @@
 #
 Name     : perl-Mojo-DOM58
 Version  : 3.001
-Release  : 19
+Release  : 20
 URL      : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Mojo-DOM58-3.001.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Mojo-DOM58-3.001.tar.gz
 Summary  : 'Minimalistic HTML/XML DOM parser with CSS selectors'
